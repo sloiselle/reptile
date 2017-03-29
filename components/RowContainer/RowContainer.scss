@@ -1,0 +1,10 @@
+@import 'bourbon';
+
+.RowContainer {
+	background: grey;
+	height: 100vh;
+	width: 20%;
+	min-width: 125px;
+	border-right: 3px black solid;
+	overflow: scroll;
+}

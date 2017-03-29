@@ -1,0 +1,11 @@
+@import 'bourbon';
+
+.CageContainer {
+	width: 100%;
+	height: 98.3vh;
+	&-row {
+		height: 25%;
+		width: 100%;
+		@include display(flex);
+	}
+}
