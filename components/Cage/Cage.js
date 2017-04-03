@@ -23,8 +23,8 @@ class Cage extends React.Component {
 
 		if (!this.props.empty) {
 			cageNumberRow = <p onClick={() => this.refs.CageModal.show()} className={cx('Cage-number')}>Cage {this.props.cageNumber}</p>;
-			cageTempRow = <p onClick={() => this.refs.CageModal.show()} className={cx('Cage-text')}><span className={cx('Cage-text-label')}>Temp:</span> {this.props.temp}</p>;
-			cageHumidityRow = <p onClick={() => this.refs.CageModal.show()} className={cx('Cage-text')}><span className={cx('Cage-text-label')}>Humidity:</span> {this.props.hum}</p>;
+			cageTempRow = <p onClick={() => this.refs.CageModal.show()} className={cx('Cage-text')}><span className={cx('Cage-text-label')}>Temp:</span> {this.props.temp}&#8457;</p>;
+			cageHumidityRow = <p onClick={() => this.refs.CageModal.show()} className={cx('Cage-text')}><span className={cx('Cage-text-label')}>Humidity:</span> {this.props.hum}%</p>;
 			modalTitle = `Cage ${this.props.cageNumber}`;
 		}
 
@@ -32,17 +32,17 @@ class Cage extends React.Component {
 	  	feedingTime = this.props.feedings[0].date;
 	  	feedingItem = this.props.feedings[0].item;
 	  	if (this.props.feedings[0].qty > 0) {
-	  		feedingQty = `(${this.props.feedings[0].qty})`;
+	  		feedingQty = `(x${this.props.feedings[0].qty})`;
 	  	}
 	  }
 
 
 	  return (
-	    <div 
+	    <div
 	    	className={cx(
-	    		'Cage', 
-	    		{'Cage-light': this.props.lightOn}, 
-	    		{'Cage-alert': this.props.alert}, 
+	    		'Cage',
+	    		{'Cage-light': this.props.lightOn},
+	    		{'Cage-alert': this.props.alert},
 	    		{'Cage-empty': this.props.empty}
     		)}
   		>
@@ -51,12 +51,12 @@ class Cage extends React.Component {
 	    	{cageHumidityRow}
 	    	<SkyLight hideOnOverlayClicked className={cx('Cage-modal')} ref="CageModal" title={modalTitle}>
 	    		<div className={cx('Cage-modal-details')}>
-	    			<img 
+	    			<img
 		    			alt={this.props.species}
 		    			width={260}
 		    			height={173}
 		    			className={cx('Cage-modal-image')}
-		    			src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Varanus_salvator_-_01.jpg/260px-Varanus_salvator_-_01.jpg' 
+		    			src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Varanus_salvator_-_01.jpg/260px-Varanus_salvator_-_01.jpg'
 	    			/>
 	    			<div className={cx('Cage-modal-details-block')}>
 		        	<p><span className={cx('Cage-modal-title')}>Name: </span>{this.props.name}</p>
@@ -66,8 +66,8 @@ class Cage extends React.Component {
 	    			<div className={cx('Cage-modal-details-block')}>
 		        	<p><span className={cx('Cage-modal-title')}>Last Feeding: </span>{feedingTime}</p>
 		        	<p><span className={cx('Cage-modal-title')}>Item(s) Fed: </span>{feedingItem} {feedingQty}</p>
-		        	<p><span className={cx('Cage-modal-title')}>Temperature: </span>{this.props.temp}</p>
-		        	<p><span className={cx('Cage-modal-title')}>Humidity: </span>{this.props.hum}</p>
+		        	<p><span className={cx('Cage-modal-title')}>Temperature: </span>{this.props.temp}&#8457;</p>
+		        	<p><span className={cx('Cage-modal-title')}>Humidity: </span>{this.props.hum}%</p>
 	    			</div>
 	        </div>
 	        <div className={cx('Cage-modal-details')}>
